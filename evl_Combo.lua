@@ -5,7 +5,7 @@ end
 evl_Combo = CreateFrame("Frame", "EvlCombo")
 evl_Combo:SetWidth(50)
 evl_Combo:SetHeight(50)
-evl_Combo:SetPoint("CENTER", UIParent, "BOTTOM", 0, 120)
+evl_Combo:SetPoint("CENTER", UIParent, "BOTTOM", 0, 110)
 
 local count = evl_Combo:CreateFontString(nil, "OVERLAY")
 count:SetAllPoints(evl_Combo)
