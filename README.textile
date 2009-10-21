@@ -1,0 +1,8 @@
+Collection of enhancements and tweaks for the default combat text
+
+!http://i36.tinypic.com/wr05n5.png!
+
+h2. Features
+
+* Large clear numerical display
+* Vehicle compatible
