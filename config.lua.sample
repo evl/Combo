@@ -1,0 +1,2 @@
+evl_Combo.config.position = {"CENTER", UIParent, "BOTTOM", 0, 110} -- Position
+evl_Combo.config.font = {STANDARD_TEXT_FONT, 26} -- Font and font size
