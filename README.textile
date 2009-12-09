@@ -1,4 +1,4 @@
-Collection of enhancements and tweaks for the default combat text
+Large numerical display of current combo points
 
 !http://i36.tinypic.com/wr05n5.png!
 
