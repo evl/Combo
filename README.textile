@@ -2,6 +2,10 @@ Large numerical display of current combo points
 
 !http://i36.tinypic.com/wr05n5.png!
 
+h2. Configuration
+
+Copy @config.lua.sample@ to @config.lua@ and modify as required.
+
 h2. Features
 
 * Large clear numerical display
