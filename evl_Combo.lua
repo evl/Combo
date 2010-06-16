@@ -49,6 +49,7 @@ end
 
 frame:SetWidth(50)
 frame:SetHeight(50)
+
 frame:SetScript("OnEvent", onEvent)
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:RegisterEvent("PLAYER_TARGET_CHANGED")
