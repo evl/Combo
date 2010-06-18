@@ -1,4 +1,5 @@
 local addonName, addon = ...
+local config = addon.config
 
-addon.config.position = {"CENTER", UIParent, "BOTTOM", 0, 110} -- Position
-addon.config.font = {STANDARD_TEXT_FONT, 26} -- Font and font size
+config.position = {"CENTER", UIParent, "BOTTOM", 0, 110} -- Position
+config.font = {STANDARD_TEXT_FONT, 26} -- Font and font size
