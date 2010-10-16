@@ -5,3 +5,7 @@
 evl_Combo.lua
 
 config.lua
+
+modules\combo.lua
+modules\holy_power.lua
+modules\lightning_shield.lua
