@@ -1,6 +1,6 @@
 local addonName, addon = ...
 
-if UnitPowerType("player") == 9 then
+if select(2, UnitClass("player")) == "PALADIN" then
 	local updateHolyPower = function(event, unit)
 		if not unit or unit == "player" then
 			addon:SetCount(UnitPower("player", SPELL_POWER_HOLY_POWER))
