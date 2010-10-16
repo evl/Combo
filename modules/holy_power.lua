@@ -10,4 +10,7 @@ if select(2, UnitClass("player")) == "PALADIN" then
 	addon:RegisterEvent("PLAYER_ENTERING_WORLD", updateHolyPower)
 	addon:RegisterEvent("UNIT_DISPLAYPOWER", updateHolyPower)
 	addon:RegisterEvent("UNIT_POWER", updateHolyPower)
+	
+	PaladinPowerBar:UnregisterAllEvents()
+	PaladinPowerBar:SetAlpha(0)
 end
