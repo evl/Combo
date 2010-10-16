@@ -8,6 +8,7 @@ addon.config = {
 local config = addon.config
 local frame = CreateFrame("Frame", nil, UIParent)
 local count = frame:CreateFontString(nil, "OVERLAY")
+local defaultColor = {1, 1, 1}
 local events = {}
 
 local onEvent = function(self, event, ...)
@@ -30,8 +31,13 @@ function addon:RegisterEvent(event, handler)
 	table.insert(handlers, handler)
 end
 
-function addon:SetCount(value)
+function addon:SetCount(value, color)
+	if not color then
+		color = defaultColor
+	end
+	
 	count:SetText((value or 0) > 0 and value or "")
+	count:SetTextColor(unpack(color))
 end
 
 addon:RegisterEvent("PLAYER_ENTERING_WORLD", function()
