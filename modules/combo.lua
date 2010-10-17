@@ -9,5 +9,4 @@ addon:RegisterEvent("UNIT_COMBO_POINTS", updateComboPoints)
 addon:RegisterEvent("UNIT_ENTERED_VEHICLE", updateComboPoints)
 addon:RegisterEvent("UNIT_EXITED_VEHICLE", updateComboPoints)
 
-ComboFrame:UnregisterEvent("PLAYER_TARGET_CHANGED")
-ComboFrame:UnregisterEvent("UNIT_COMBO_POINTS")
+ComboFrame:UnregisterAllEvents()

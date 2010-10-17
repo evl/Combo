@@ -8,5 +8,6 @@ Copy @config.lua.sample@ to @config.lua@ and modify as required.
 
 h2. Features
 
+* Supports Combo Points, Holy Power and Lightning Shield charges
 * Large clear numerical display
 * Vehicle compatible
