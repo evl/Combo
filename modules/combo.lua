@@ -1,12 +1,26 @@
 local addonName, addon = ...
+local config = addon.config
+
+local getCurrentComboPoints = function()
+	return GetComboPoints(UnitHasVehicleUI("player") and "vehicle" or "player", "target")
+end
 
 local updateComboPoints = function(event, unit)
-	addon:SetCount(GetComboPoints(UnitHasVehicleUI("player") and "vehicle" or "player", "target"))
+	local currentComboPoints = getCurrentComboPoints()
+
+	-- If we switched targets to a target with no combo points, switch to a faded display
+	if event == "PLAYER_TARGET_CHANGED" and currentComboPoints == 0 then
+		addon:SetColor(addon.config, 0.5)
+	else
+		addon:SetCount(currentComboPoints)
+		addon:SetColor(addon.config)
+	end	
 end
 
 addon:RegisterEvent("PLAYER_ENTERING_WORLD", updateComboPoints)
 addon:RegisterEvent("UNIT_COMBO_POINTS", updateComboPoints)
 addon:RegisterEvent("UNIT_ENTERED_VEHICLE", updateComboPoints)
 addon:RegisterEvent("UNIT_EXITED_VEHICLE", updateComboPoints)
+addon:RegisterEvent("PLAYER_TARGET_CHANGED", updateComboPoints)
 
 ComboFrame:UnregisterAllEvents()

@@ -3,12 +3,12 @@ local addonName, addon = ...
 addon.config = {
 	position = {"CENTER", UIParent, "BOTTOM", 0, 110},
 	font = {STANDARD_TEXT_FONT, 26},
+	color = {1, 1, 1}
 }
 
 local config = addon.config
 local frame = CreateFrame("Frame", nil, UIParent)
 local count = frame:CreateFontString(nil, "OVERLAY")
-local defaultColor = {1, 1, 1}
 local events = {}
 
 local onEvent = function(self, event, ...)
@@ -31,13 +31,14 @@ function addon:RegisterEvent(event, handler)
 	table.insert(handlers, handler)
 end
 
-function addon:SetCount(value, color)
-	if not color then
-		color = defaultColor
-	end
-	
+function addon:SetCount(count)
 	count:SetText((value or 0) > 0 and value or "")
-	count:SetTextColor(unpack(color))
+end
+
+function addon:SetColor(color, alpha)
+	local r, g, b = unpack(color)
+	
+	count:SetTextColor(r, g, b, alpha or 1)
 end
 
 addon:RegisterEvent("PLAYER_ENTERING_WORLD", function()
@@ -47,6 +48,7 @@ addon:RegisterEvent("PLAYER_ENTERING_WORLD", function()
 	count:SetJustifyH("CENTER")
 	count:SetShadowOffset(0.7, -0.7)
 	count:SetFont(unpack(config.font))
+	count:SetTextColor(unpack(config.color))
 end)
 
 frame:SetWidth(50)
