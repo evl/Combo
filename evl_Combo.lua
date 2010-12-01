@@ -8,7 +8,7 @@ addon.config = {
 
 local config = addon.config
 local frame = CreateFrame("Frame", nil, UIParent)
-local count = frame:CreateFontString(nil, "OVERLAY")
+local display = frame:CreateFontString(nil, "OVERLAY")
 local events = {}
 
 local onEvent = function(self, event, ...)
@@ -32,23 +32,23 @@ function addon:RegisterEvent(event, handler)
 end
 
 function addon:SetCount(count)
-	count:SetText((value or 0) > 0 and value or "")
+	display:SetText((count or 0) > 0 and count or "")
 end
 
 function addon:SetColor(color, alpha)
 	local r, g, b = unpack(color)
 	
-	count:SetTextColor(r, g, b, alpha or 1)
+	display:SetTextColor(r, g, b, alpha or 1)
 end
 
 addon:RegisterEvent("PLAYER_ENTERING_WORLD", function()
 	frame:SetPoint(unpack(config.position))
 
-	count:SetAllPoints(frame)
-	count:SetJustifyH("CENTER")
-	count:SetShadowOffset(0.7, -0.7)
-	count:SetFont(unpack(config.font))
-	count:SetTextColor(unpack(config.color))
+	display:SetAllPoints(frame)
+	display:SetJustifyH("CENTER")
+	display:SetShadowOffset(0.7, -0.7)
+	display:SetFont(unpack(config.font))
+	display:SetTextColor(unpack(config.color))
 end)
 
 frame:SetWidth(50)
