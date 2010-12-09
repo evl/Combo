@@ -10,7 +10,7 @@ local updateComboPoints = function(event, unit)
 
 	-- If we switched targets to a target with no combo points, switch to a faded display
 	if event == "PLAYER_TARGET_CHANGED" and currentComboPoints == 0 then
-		addon:SetColor(config.color, 0.7)
+		addon:SetColor(config.color, 0.6)
 	else
 		addon:SetCount(currentComboPoints)
 		addon:SetColor(config.color)
